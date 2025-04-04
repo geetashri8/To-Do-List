@@ -1,0 +1,26 @@
+#root {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 0.5rem;
+  text-align: center;
+/*   border:2px solid yellowgreen;
+  background-color: aquamarine; */
+
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; 
+  border-radius: 4px;    
+  border: 2px solid #ccc; 
+}
+
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; 
+  border-radius: 4px;      
+}
