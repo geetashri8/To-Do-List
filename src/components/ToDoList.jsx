@@ -25,6 +25,7 @@ export default function ToDoList(){
         padding:"0.5rem",
         borderRadius: "8px",
         
+        
         }}
         >
           <Grid container  direction="column" spacing={1} sx={{ maxWidth:"100%"}}>
@@ -38,10 +39,10 @@ export default function ToDoList(){
             </Grid>
 
             <Grid item sx={{ maxWidth:"100%"}}>
-            <TableContainer component={Paper} sx={{ maxWidth:"100%",maxHeight:"600px", overflowY:"scroll" }}>
+            <TableContainer component={Paper} sx={{ maxWidth:"100%",height:"600px", overflowY:"scroll",backgroundColor:"#e3d1c2" }}>
             <Table>            
               <TableHead >
-                <TableRow sx={{ position: "sticky", top: 0, zIndex: 1, fontSize:"medium", backgroundColor: "#c5d4c9" }}>
+                <TableRow sx={{ position: "sticky", top: 0, zIndex: 1, fontSize:"medium", fontWeight:"bold", backgroundColor: "#c5d4c9" }}>
                   <TableCell ><strong>TASK</strong></TableCell>
                   <TableCell></TableCell>
                   <TableCell ><strong>PRIORITY</strong></TableCell>
@@ -53,15 +54,15 @@ export default function ToDoList(){
               <TableBody sx={{backgroundColor:"#e3d1c2"}}>
                 {state.map((row) => (
                   <TableRow key={row.id}>
-                    <TableCell>{row.taskName}</TableCell>
-                    <TableCell>
+                    <TableCell sx={{fontSize:16}}>{row.taskName}</TableCell>
+                    <TableCell >
                       <Button onClick={()=>{ setRowId(row.id); navigate("/edittask")}}>edit</Button>
                       <Button onClick={()=>dispatch({type:"DeleteTask", payload:row.id})}>delete</Button>
                       <Button onClick={()=>{ setRowId(row.id); navigate("/viewtask")}}>view</Button>
                     </TableCell>
-                    <TableCell>{row.priority}</TableCell>
-                    <TableCell>{row.status? "Completed":"Pending"}</TableCell>
-                    <TableCell>{row.endDate}</TableCell>
+                    <TableCell sx={{fontSize:16}}>{row.priority}</TableCell>
+                    <TableCell sx={{fontSize:16}}>{row.status? "Completed":"Pending"}</TableCell>
+                    <TableCell sx={{fontSize:16}}>{row.endDate}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

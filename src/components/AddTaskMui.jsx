@@ -92,7 +92,7 @@ export default function AddTaskMui(){
           <DatePicker label="Start-Date" format="DD-MM-YYYY" minDate={dayjs(dateStr, "YYYY-MM-DD", true)} onChange={(newValue)=>setTask({...task, startDate:newValue.format("YYYY-MM-DD")})} sx={{width:"48%"}} />
           </LocalizationProvider>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <DatePicker label="End-Date" onChange={(newValue)=>setTask({...task, endDate:newValue.format("YYYY-MM-DD")})} format="DD-MM-YYYY" sx={{width:"48%"}}/>
+          <DatePicker label="End-Date" minDate={dayjs(task.startDate, "YYYY-MM-DD", true)}  onChange={(newValue)=>setTask({...task, endDate:newValue.format("YYYY-MM-DD")})} format="DD-MM-YYYY" sx={{width:"48%"}}/>
           </LocalizationProvider>
         </Box>
         <Box sx={{display:"flex",justifyContent:"flex-start"}} >
