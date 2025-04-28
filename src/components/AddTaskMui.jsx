@@ -53,7 +53,7 @@ export default function AddTaskMui(){
 
    function handleSubmit(e){
     e.preventDefault();
-    const newTask = {...task,id:`${Date.now()}`};
+    const newTask = {...task,id:`${Date.now().toString() + Math.floor(Math.random() * 1000).toString()}`};
    
     console.log(task);
     console.log(state);

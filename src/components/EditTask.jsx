@@ -50,7 +50,8 @@ const [task, setTask] = useState(taskObj[0]);
 const navigate = useNavigate();
    
    
-console.log("id",rowId)
+//console.log("id",rowId)
+//console.log("task",task);
    function handleChange(e){
     setTask({...task,[e.target.name]:e.target.value})
    }
@@ -59,10 +60,10 @@ console.log("id",rowId)
     e.preventDefault();
  
    
-    console.log(task);
-    console.log(state);
+    //console.log("edittaskObj",taskObj[0]);
+    //console.log(state);
     dispatch({type:"EditTask",payload:task});
-    setTask(taskObj);
+    //setTask(taskObj);
     setTimeout(1000,navigate("/"));
    }
 
